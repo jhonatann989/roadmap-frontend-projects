@@ -1,0 +1,41 @@
+.h1{
+    line-height: 5px;
+}
+
+.h2 {
+    color: limegreen;
+    line-height: 5px;
+}
+
+.h3 {
+    line-height: 1px;
+}
+
+.section {
+    padding-top: 5px;
+}
+
+.page {
+    font-family: var(--font-geist-sans);
+    border-width: 3px;
+    border-color: black;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 5vw 10vh 5vw 10vh;
+}
+
+.divider {
+    margin: 2vh 10vw 2vh 10vw;
+}
+
+.pillGroup {
+    display: inline-flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+
+.pill {
+    background-color: gainsboro;
+    border-radius: 5px;
+}
