@@ -1,22 +1,27 @@
-.h1{
-    line-height: 5px;
-}
+.h1{ line-height: 1px; }
 
 .h2 {
     color: limegreen;
-    line-height: 5px;
+    line-height: 30x;
 }
 
-.h3 {
-    line-height: 1px;
+.h3 { line-height: 1px; }
+
+.h4 { line-height: 1px; }
+
+.li { line-height: 1px; }
+
+.institution { 
+    line-height: 5px; 
+    color: deepskyblue;
 }
 
 .section {
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .page {
-    font-family: var(--font-geist-sans);
+    font-family: Arial, Helvetica, sans-serif;
     border-width: 3px;
     border-color: black;
     border-style: groove;
