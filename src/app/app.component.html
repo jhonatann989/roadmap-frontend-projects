@@ -1,62 +1,42 @@
 <div class="page">
   <hr class="divider"/>
   <section class="section">
-      <h1 class="h1">Jhonatan Rodolfo Morales Carrillo</h1>
-      <h2 class="h2">Web Developer and RPA</h2>
-      <h3 class="h3">14 South Street, Llanitos Downtown</h3>
-      <h3 class="h3">Los Patios, Norte de Santander, Colombia</h3>
-      <h3 class="h3">+57 000 0000</h3>
-      <h3 class="h3">jhonatann989&#64;gmail.com</h3>
+      <h1 class="h1">{{candidate.Name}}</h1>
+      <h2 class="h2">{{candidate.Position}}</h2>
+      <h3 class="h3">{{candidate.Address}}</h3>
+      <h3 class="h3">{{candidate.PhoneNumber}}</h3>
+      <h3 class="h3">{{candidate.Email}}</h3>
   </section>
   <section class="section">
       <h2 class="h2">Skills</h2>
       <div class="pillGroup">
-          <span class="pill">HTML</span>
-          <span class="pill">Javascript</span>
-          <span class="pill">React JS</span>
-          <span class="pill">Node JS</span>
-          <span class="pill">Automation Anywhere</span>
-          <span class="pill">Power Automate Desktop</span>
-          <span class="pill">English (C1)</span>
-          <span class="pill">SQL (Basics)</span>
-          <span class="pill">C# (Basics)</span>
+        @for (skill of skills; track $index) {<span class="pill">{{skill.Name}}</span>}
+        @empty {<span class="pill">No skills for this candidate</span>}
       </div>
   </section>
   <section class="section">
       <h2 class="h2">Education</h2>
-      <h3 class="institution">Instituto Universitario de Tecnología Agroindustrial Región Los Andes</h3>
-      <h3 class="h3">Engineer Degree</h3>
-      <h3 class="h3">From September 2010 to July 2014</h3>
+      @for (education of educations; track $index) {
+          <h3 class="institution">{{education.Institute}}</h3>
+          <h3 class="h3">{{education.Degree}}</h3>
+          <h3 class="h3">From {{education.From}} to {{education.To}}</h3>
+      }
+      @empty {<h3 class="h3">No education for this candidate</h3>}
   </section>
   <section class="section">
       <h2 class="h2">Experience</h2>
-
-      <h3 class="institution">Teleperformance</h3>
-      <h3 class="h3">Semi Senior Developer</h3>
-      <h3 class="h3">September 2023 - Today</h3>
-      <ul>
-          <li><h4 class="h4">Power Automate Desktop</h4></li>
-          <li><h4 class="h4">C#</h4></li>
-          <li><h4 class="h4">Leadership</h4></li>
-      </ul>
-
-      <h3 class="institution">Teleperformance</h3>
-      <h3 class="h3">Junior Developer</h3>
-      <h3 class="h3">March 2021 - September 2023</h3>
-      <ul>
-          <li><h4 class="h4">Automation Anywhere</h4></li>
-          <li><h4 class="h4">Google Apps Scripts</h4></li>
-          <li><h4 class="h4">Node JS</h4></li>
-      </ul>
-
-      <h3 class="institution">Inversiones en Soluciones de TI de Codigo Abierto SAS</h3>
-      <h3 class="h3">Junior Developer</h3>
-      <h3 class="h3">December 2019 - March 2021</h3>
-      <ul>
-          <li><h4 class="h4">React JS</h4></li>
-          <li><h4 class="h4">REST</h4></li>
-          <li><h4 class="h4">Symfony</h4></li>
-      </ul>
+      @for (experience of experiences; track $index) {
+          <h3 class="institution">{{experience.Company}}</h3>
+          <h3 class="h3">{{experience.Position}}</h3>
+          <h3 class="h3">{{experience.From}} - {{experience.To}}</h3>
+          <ul>
+            @for (learnedSkill of experience.LearnedSkills; track $index) {
+                <li><h4 class="h4">{{learnedSkill.Name}}</h4></li>
+            }
+            @empty {<li><h4 class="h4">No new skills learned from this experience</h4></li>}
+          </ul>
+      }
+      @empty {<h3 class="h3">No experience for this candidate</h3>}
   </section>
 </div>
 
